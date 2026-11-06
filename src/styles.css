@@ -2,9 +2,12 @@
 @source "../src";
 
 /*
- * Design tokens. The site is paper (background) and ink, nothing else.
- * Colors use oklch. The @theme block maps each variable to a Tailwind utility
- * (e.g. --color-ink -> bg-ink, text-ink).
+ * Design tokens. Five colors, nothing else:
+ *   #F6F6F6 page background       #E4E4E4 surfaces and dividers   #9E9E9E labels and captions
+ *   #303030 text, dark sections   #CBE86A the one accent (CTAs, active states, tags, highlights)
+ * #9E9E9E is too light for small text on #F6F6F6 (about 2.5:1), so readable secondary copy uses
+ * text-foreground/70 and #9E9E9E stays on dark backgrounds and on decorative labels.
+ * The @theme block maps each variable to a Tailwind utility (e.g. --color-ink -> bg-ink, text-ink).
  */
 
 @theme inline {
@@ -16,19 +19,23 @@
   --color-border: var(--border);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
 }
 
 :root {
-  --background: oklch(0.935 0.003 106);
-  --foreground: oklch(0.16 0.005 106);
-  --muted: oklch(0.9 0.003 106);
-  --muted-foreground: oklch(0.5 0.005 106);
+  --background: #f6f6f6;
+  --foreground: #303030;
+  --muted: #e4e4e4;
+  --muted-foreground: #9e9e9e;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.85 0.003 106);
-  --ink: oklch(0.14 0.004 106);
-  --ink-foreground: oklch(0.93 0.003 106);
+  --border: #e4e4e4;
+  --ink: #303030;
+  --ink-foreground: #f6f6f6;
+  --accent: #cbe86a;
+  --accent-foreground: #303030;
 }
 
 @layer base {
@@ -44,8 +51,8 @@
   }
 
   ::selection {
-    background: var(--ink);
-    color: var(--ink-foreground);
+    background: var(--accent);
+    color: var(--accent-foreground);
   }
 
   :focus-visible {

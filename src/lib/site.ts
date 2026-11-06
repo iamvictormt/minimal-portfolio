@@ -47,3 +47,34 @@ export const LOCATION_LONG = `${SITE.city}, ${SITE.stateName}, ${SITE.country}`;
 export const EMAIL = SITE.email;
 
 export const WHATSAPP_URL = SITE.whatsapp ? `https://wa.me/${SITE.whatsapp}` : "";
+
+/** WhatsApp link with a greeting already typed. Empty when no number is set. */
+export const WHATSAPP_HREF = WHATSAPP_URL
+  ? `${WHATSAPP_URL}?text=${encodeURIComponent(`Olá, ${SITE.firstName}! Vim pelo seu portfólio.`)}`
+  : "";
+
+/** Everything I work with, grouped by area. About and the structured data read from here. */
+export const SKILLS = {
+  frontend: [
+    "Angular 2+ (até a v18)",
+    "AngularJS",
+    "RxJS",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "HTML",
+    "CSS",
+  ],
+  backend: [
+    "Java",
+    "Spring Boot",
+    "Quarkus",
+    "APIs REST",
+    "JPA/Hibernate",
+    "Apache Maven",
+    "JUnit",
+    "Node.js",
+  ],
+  database: ["Oracle", "SQL", "Modelagem de dados", "Mapeamento de entidades"],
+  devops: ["Git", "Docker", "Jenkins", "CI/CD"],
+};

@@ -19,13 +19,13 @@ function NotFoundComponent() {
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
         <h2 className="mt-4 text-xl font-semibold text-foreground">Página não encontrada</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-foreground/70">
           A página que você procura não existe ou foi movida.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-ink hover:text-ink-foreground"
+            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Ir para o início
           </Link>
@@ -45,7 +45,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           Esta página não carregou
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-sm text-foreground/70">
           Algo deu errado do nosso lado. Você pode tentar atualizar ou voltar ao início.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -54,13 +54,13 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
               router.invalidate();
               reset();
             }}
-            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-ink hover:text-ink-foreground"
+            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Tentar novamente
           </button>
           <a
             href="/"
-            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-ink hover:text-ink-foreground"
+            className="micro inline-flex items-center justify-center border border-foreground px-4 py-2 uppercase transition-colors hover:bg-accent hover:text-accent-foreground"
           >
             Ir para o início
           </a>
@@ -78,7 +78,7 @@ export const Route = createRootRoute({
       { title: `${FULL_NAME} — Portfólio` },
       { name: "description", content: `Desenvolvedor full stack de ${LOCATION_SHORT}.` },
       { name: "author", content: FULL_NAME },
-      { name: "theme-color", content: "#ebebe8" },
+      { name: "theme-color", content: "#f6f6f6" },
     ],
     links: [
       {

@@ -52,14 +52,14 @@ export function ProjectList({ limit }: { limit?: number }) {
   return (
     <>
       <ul
-        className="relative border-t border-foreground/15"
+        className="relative border-t border-border"
         onMouseMove={(e) => setPos({ x: e.clientX, y: e.clientY })}
         onMouseLeave={() => setActive(null)}
       >
         {items.map((p, i) => (
           <li
             key={p.name}
-            className={`border-b border-foreground/15 transition-opacity duration-300 ${active !== null && active !== i ? "opacity-30" : ""}`}
+            className={`border-b border-border transition-opacity duration-300 ${active !== null && active !== i ? "opacity-30" : ""}`}
           >
             <Row
               project={p}
@@ -77,8 +77,12 @@ export function ProjectList({ limit }: { limit?: number }) {
                   {p.href ? "↗" : "→"}
                 </span>
               </span>
-              <span className="micro hidden uppercase md:block">{p.type}</span>
-              <span className="micro hidden uppercase text-muted-foreground md:block">
+              <span className="micro hidden md:block">
+                <span className="bg-accent px-2 py-1 uppercase text-accent-foreground">
+                  {p.type}
+                </span>
+              </span>
+              <span className="micro hidden uppercase text-foreground/70 md:block">
                 {p.role ?? p.stack.join(" · ")}
               </span>
               <span className="sr-only md:sr-only">{p.description}</span>
@@ -89,14 +93,14 @@ export function ProjectList({ limit }: { limit?: number }) {
                   width={PROJECT_IMAGE_SIZE.width}
                   height={PROJECT_IMAGE_SIZE.height}
                   loading="lazy"
-                  className="h-auto w-full border border-foreground/15"
+                  className="h-auto w-full border border-border"
                 />
-                <span className="text-base leading-relaxed text-muted-foreground">
+                <span className="text-base leading-relaxed text-foreground/70">
                   {p.description}
                 </span>
                 <span className="micro uppercase">
-                  <span className="text-foreground">{p.type}</span>
-                  <span className="text-muted-foreground"> · {p.stack.join(" · ")}</span>
+                  <span className="bg-accent px-1.5 py-0.5 text-accent-foreground">{p.type}</span>
+                  <span className="text-foreground/70"> · {p.stack.join(" · ")}</span>
                 </span>
               </span>
             </Row>
@@ -115,7 +119,7 @@ export function ProjectList({ limit }: { limit?: number }) {
         }}
       >
         <div
-          className="relative overflow-hidden border border-foreground/15 bg-ink"
+          className="relative overflow-hidden border border-border bg-muted"
           style={{ height: PREVIEW_H }}
         >
           {items.map((p, i) => (

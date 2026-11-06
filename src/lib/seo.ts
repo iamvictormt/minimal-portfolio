@@ -1,5 +1,5 @@
 import { projects } from "@/lib/projects";
-import { FULL_NAME, LOCATION_LONG, SITE } from "@/lib/site";
+import { FULL_NAME, LOCATION_LONG, SITE, SKILLS } from "@/lib/site";
 
 export const ROUTES = ["/", "/works", "/about", "/playground", "/contact"] as const;
 export type RoutePath = (typeof ROUTES)[number];
@@ -48,7 +48,7 @@ export function seo({ title, description, path }: PageSeo) {
 /** Escapes a JSON-LD payload so it can sit inside a <script> tag. */
 const jsonLd = (data: object) => JSON.stringify(data).replace(/</g, "\\u003c");
 
-const knowsAbout = [...new Set(projects.flatMap((p) => p.stack))];
+const knowsAbout = Object.values(SKILLS).flat();
 
 /** Person and WebSite structured data, shared by every page. */
 export function siteStructuredData() {

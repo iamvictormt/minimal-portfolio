@@ -45,8 +45,7 @@ function Works() {
           a ponta.
         </p>
         <p className="max-w-[34rem] text-base leading-relaxed md:text-lg">
-          Passe o mouse sobre um deles para espiar, clique para abrir o
-          site.
+          Passe o mouse sobre um deles para espiar, clique para abrir o site.
         </p>
       </div>
       <div className="pb-12 pt-10 md:pb-16 md:pt-14">

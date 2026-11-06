@@ -16,7 +16,7 @@ export const Route = createFileRoute("/playground")({
 });
 
 const buttonClass =
-  "micro border border-foreground px-4 py-2 uppercase transition-colors duration-300 hover:bg-ink hover:text-ink-foreground disabled:pointer-events-none disabled:opacity-40 motion-reduce:transition-none";
+  "micro border border-foreground px-4 py-2 uppercase transition-colors duration-300 hover:bg-accent hover:text-accent-foreground disabled:pointer-events-none disabled:opacity-40 motion-reduce:transition-none";
 
 const fieldClass =
   "w-full border-b border-foreground/30 bg-transparent pb-2 text-xl font-medium tracking-[-0.02em] outline-none transition-colors placeholder:text-foreground/25 focus:border-foreground";
@@ -43,17 +43,17 @@ function Panel({
   return (
     <section
       aria-labelledby={id}
-      className={`flex flex-col gap-5 border-b border-r border-foreground/15 p-5 md:p-6 ${className}`}
+      className={`flex flex-col gap-5 border-b border-r border-border p-5 md:p-6 ${className}`}
     >
       <div className="flex items-baseline justify-between">
-        <span className="micro text-muted-foreground">{n}</span>
-        <span className="micro uppercase text-muted-foreground">{tag}</span>
+        <span className="micro text-foreground/70">{n}</span>
+        <span className="micro uppercase text-foreground/70">{tag}</span>
       </div>
       <div className="flex flex-col gap-2">
         <h2 id={id} className="text-2xl font-medium leading-none tracking-[-0.04em] md:text-3xl">
           {title}
         </h2>
-        <p className="max-w-[30rem] text-sm leading-relaxed text-muted-foreground">{hint}</p>
+        <p className="max-w-[30rem] text-sm leading-relaxed text-foreground/70">{hint}</p>
       </div>
       {children}
     </section>
@@ -113,7 +113,7 @@ function NameLines() {
       o.font = `600 ${size}px Manrope, system-ui, sans-serif`;
       o.textAlign = "center";
       o.textBaseline = "middle";
-      o.fillStyle = "#fff";
+      o.fillStyle = "#f6f6f6";
       o.fillText(label, W / 2, H / 2);
       const { data } = o.getImageData(0, 0, W, H);
       const step = Math.max(2, Math.round(dpr * 2.2));
@@ -142,7 +142,7 @@ function NameLines() {
 
     const draw = () => {
       ctx.clearRect(0, 0, W, H);
-      ctx.fillStyle = "#fff";
+      ctx.fillStyle = "#f6f6f6";
       const s = Math.max(1.4, dpr * 1.7);
       for (const d of dots) ctx.fillRect(d.x, d.y, s, s);
     };
@@ -241,7 +241,7 @@ function NameLines() {
         />
       </div>
       <div>
-        <label htmlFor={id} className="micro uppercase text-muted-foreground">
+        <label htmlFor={id} className="micro uppercase text-foreground/70">
           Escreva uma palavra
         </label>
         <input
@@ -316,7 +316,7 @@ function Reflex() {
       sub: "Quando a caixa ficar clara, toque o mais rápido que puder.",
     },
     wait: { box: "bg-ink text-ink-foreground", label: "Espere…", sub: "Ainda não!" },
-    go: { box: "border border-foreground bg-white text-ink", label: "Agora!", sub: "Toque!" },
+    go: { box: "bg-accent text-accent-foreground", label: "Agora!", sub: "Toque!" },
     early: {
       box: "border border-foreground",
       label: "Cedo demais",
@@ -346,7 +346,7 @@ function Reflex() {
         </span>
         <span className="micro uppercase opacity-70">{current.sub}</span>
       </button>
-      <p aria-live="polite" className="micro uppercase text-muted-foreground">
+      <p aria-live="polite" className="micro uppercase text-foreground/70">
         {best !== null ? `Seu melhor tempo: ${best} ms` : "Ainda sem recorde"}
       </p>
     </div>
@@ -409,7 +409,7 @@ function Typing() {
         })}
       </p>
       <div>
-        <label htmlFor={id} className="micro uppercase text-muted-foreground">
+        <label htmlFor={id} className="micro uppercase text-foreground/70">
           Digite a frase acima
         </label>
         <input
@@ -425,7 +425,7 @@ function Typing() {
         />
       </div>
       <div className="flex items-center justify-between gap-3">
-        <p aria-live="polite" className="micro uppercase text-muted-foreground">
+        <p aria-live="polite" className="micro uppercase text-foreground/70">
           {result ? (
             <>
               <span className="text-foreground">{result.wpm} palavras por minuto</span> ·{" "}
@@ -460,7 +460,7 @@ function SplitBill() {
   return (
     <div className="flex flex-1 flex-col gap-5">
       <div>
-        <label htmlFor={totalId} className="micro uppercase text-muted-foreground">
+        <label htmlFor={totalId} className="micro uppercase text-foreground/70">
           Valor da conta (R$)
         </label>
         <input
@@ -473,7 +473,7 @@ function SplitBill() {
         />
       </div>
       <div className="flex items-center justify-between gap-3">
-        <span className="micro uppercase text-muted-foreground">Pessoas</span>
+        <span className="micro uppercase text-foreground/70">Pessoas</span>
         <div className="flex items-center gap-3">
           <button
             type="button"
@@ -495,7 +495,7 @@ function SplitBill() {
         </div>
       </div>
       <div role="radiogroup" aria-label="Gorjeta" className="flex flex-wrap items-center gap-2">
-        <span className="micro mr-1 uppercase text-muted-foreground">Gorjeta</span>
+        <span className="micro mr-1 uppercase text-foreground/70">Gorjeta</span>
         {[0, 5, 10, 15].map((v) => (
           <button
             key={v}
@@ -503,18 +503,18 @@ function SplitBill() {
             role="radio"
             aria-checked={tip === v}
             onClick={() => setTip(v)}
-            className={`micro border px-3 py-2 tabular-nums transition-colors duration-300 motion-reduce:transition-none ${tip === v ? "border-foreground bg-ink text-ink-foreground" : "border-foreground/30 hover:border-foreground"}`}
+            className={`micro border px-3 py-2 tabular-nums transition-colors duration-300 motion-reduce:transition-none ${tip === v ? "border-foreground bg-accent text-accent-foreground" : "border-foreground/30 hover:border-foreground"}`}
           >
             {v}%
           </button>
         ))}
       </div>
-      <div aria-live="polite" className="mt-auto border-t border-foreground/15 pt-4">
-        <p className="micro uppercase text-muted-foreground">Cada um paga</p>
+      <div aria-live="polite" className="mt-auto border-t border-border pt-4">
+        <p className="micro uppercase text-foreground/70">Cada um paga</p>
         <p className="text-5xl font-medium leading-none tabular-nums tracking-[-0.05em]">
           {brl.format(each)}
         </p>
-        <p className="micro mt-2 uppercase text-muted-foreground">
+        <p className="micro mt-2 uppercase text-foreground/70">
           Total com gorjeta: {brl.format(withTip)}
         </p>
       </div>
@@ -586,7 +586,7 @@ function Password() {
   return (
     <div className="flex flex-1 flex-col gap-5">
       <p
-        className="break-all border border-foreground/15 px-3 py-4 font-mono text-lg leading-snug"
+        className="break-all border border-border px-3 py-4 font-mono text-lg leading-snug"
         aria-live="polite"
       >
         {result?.value ?? "••••••••••••••••"}
@@ -594,7 +594,7 @@ function Password() {
       <div>
         <label
           htmlFor={sliderId}
-          className="micro flex justify-between uppercase text-muted-foreground"
+          className="micro flex justify-between uppercase text-foreground/70"
         >
           <span>Tamanho</span>
           <span className="tabular-nums text-foreground">{length} caracteres</span>
@@ -695,7 +695,7 @@ function Raffle() {
     <div className="flex flex-1 flex-col gap-4">
       <div className="grid flex-1 gap-5 md:grid-cols-2">
         <div className="flex flex-col">
-          <label htmlFor={id} className="micro uppercase text-muted-foreground">
+          <label htmlFor={id} className="micro uppercase text-foreground/70">
             Um nome por linha
           </label>
           <textarea
@@ -712,9 +712,9 @@ function Raffle() {
         </div>
         <div
           aria-live="polite"
-          className="flex min-h-32 flex-col items-center justify-center border border-foreground/15 p-4 text-center"
+          className="flex min-h-32 flex-col items-center justify-center border border-border p-4 text-center"
         >
-          <p className="micro uppercase text-muted-foreground">
+          <p className="micro uppercase text-foreground/70">
             {winner ? "Sorteado" : running ? "Sorteando…" : "Quem será?"}
           </p>
           <p
@@ -725,7 +725,7 @@ function Raffle() {
         </div>
       </div>
       <div className="flex items-center justify-between gap-3">
-        <p className="micro uppercase text-muted-foreground">
+        <p className="micro uppercase text-foreground/70">
           {list.length} {list.length === 1 ? "nome" : "nomes"}
         </p>
         <button
@@ -799,7 +799,7 @@ function Coin() {
         </div>
       </div>
       <div className="flex w-full items-center justify-between gap-3">
-        <p aria-live="polite" className="micro uppercase text-muted-foreground">
+        <p aria-live="polite" className="micro uppercase text-foreground/70">
           {result ? (
             <span className="text-foreground">Deu {result}</span>
           ) : flipping ? (
@@ -849,7 +849,7 @@ function Playground() {
         </p>
       </div>
       <div className="px-page w-full pb-12 pt-10 md:pb-16 md:pt-14">
-        <div className="grid grid-cols-1 border-l border-t border-foreground/15 md:grid-cols-12">
+        <div className="grid grid-cols-1 border-l border-t border-border md:grid-cols-12">
           <Panel
             n="01"
             tag="Visual"

@@ -28,8 +28,8 @@ export function TopBar() {
         className="micro group flex items-center gap-2 justify-self-start underline decoration-transparent underline-offset-4 transition-colors hover:decoration-foreground"
       >
         <span aria-hidden className="relative flex size-2 shrink-0">
-          <span className="absolute inset-0 animate-ping rounded-full bg-foreground opacity-40 motion-reduce:animate-none" />
-          <span className="relative size-2 rounded-full bg-foreground" />
+          <span className="absolute inset-0 animate-ping rounded-full bg-accent motion-reduce:animate-none" />
+          <span className="relative size-2 rounded-full bg-accent ring-1 ring-foreground" />
         </span>
         <span>Disponível para projetos</span>
       </Link>
@@ -57,21 +57,21 @@ export const TAGLINE = `Feito em ${SITE.city}, ${SITE.stateName}, linha por linh
 
 export function NavRow() {
   return (
-    // Hairlines run edge to edge; the links sit on the page gutter. Hovering dims the others, and the
+    // A black bar, edge to edge; the links sit on the page gutter. Hovering dims the others, and the
     // current page keeps its underline.
     <nav
       aria-label="Principal"
-      className="px-page grid grid-cols-4 border-y border-foreground/15 [&:focus-within>a:not(:focus-within)]:opacity-40 [&:hover>a:not(:hover)]:opacity-40"
+      className="px-page grid grid-cols-4 bg-ink text-ink-foreground [&:focus-within>a:not(:focus-within)]:opacity-40 [&:hover>a:not(:hover)]:opacity-40"
     >
       {nav.map((i) => (
         <Link
           key={i.label}
           to={i.to}
-          className="group block py-5 transition-opacity duration-300 motion-reduce:transition-none md:py-6"
+          className="group block py-5 transition-opacity duration-300 focus-visible:outline-accent motion-reduce:transition-none md:py-6"
         >
           <span className="micro block text-muted-foreground">{i.n}</span>
           <span className="mt-1 block text-xs font-medium tracking-tight md:text-xl">
-            <span className="underline decoration-transparent decoration-1 underline-offset-[6px] transition-colors duration-300 group-hover:decoration-foreground group-focus-visible:decoration-foreground group-data-[status=active]:decoration-foreground">
+            <span className="underline decoration-transparent decoration-1 underline-offset-[6px] transition-colors duration-300 group-hover:text-accent group-hover:decoration-accent group-focus-visible:text-accent group-focus-visible:decoration-accent group-data-[status=active]:text-accent group-data-[status=active]:decoration-accent">
               {i.label}
             </span>
           </span>

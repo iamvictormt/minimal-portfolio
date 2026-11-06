@@ -15,6 +15,8 @@ export type Project = {
   /** Screenshot of the live system (1200×750). */
   image: string;
   type: string;
+  /** Shown as a large card on the home page. */
+  featured?: boolean;
   description: string;
   role?: string;
   stack: string[];
@@ -37,6 +39,7 @@ export const projects: Project[] = [
   },
   {
     name: "Nacho Factory",
+    featured: true,
     image: img_nacho_factory,
     type: "Marketplace",
     description: "Marketplace para afiliados da rede Nacho Man, com catálogo e fluxo comercial.",
@@ -65,6 +68,7 @@ export const projects: Project[] = [
   },
   {
     name: "TennisPool",
+    featured: true,
     image: img_tennispool,
     type: "Plataforma web",
     description:
@@ -75,6 +79,7 @@ export const projects: Project[] = [
   },
   {
     name: "Farejei",
+    featured: true,
     image: img_farejei,
     type: "Plataforma web",
     description:
@@ -125,6 +130,7 @@ export const projects: Project[] = [
   },
   {
     name: "UP Connection",
+    featured: true,
     image: img_up_connection,
     type: "SaaS",
     description:
