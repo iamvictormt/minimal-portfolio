@@ -43,9 +43,7 @@ function Contact() {
       )}
       <TopBar />
       <PageTitle italic="Fale">Comigo</PageTitle>
-      <div className="mt-8">
-        <NavRow />
-      </div>
+      <NavRow />
 
       <section className="px-page grid grid-cols-1 gap-14 py-12 md:grid-cols-[5fr_7fr] md:gap-20 md:py-16">
         <div className="flex flex-col gap-8 md:sticky md:top-6 md:self-start">

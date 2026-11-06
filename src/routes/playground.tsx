@@ -836,9 +836,7 @@ function Playground() {
       )}
       <TopBar />
       <PageTitle italic="Meu">Lab</PageTitle>
-      <div className="mt-8">
-        <NavRow />
-      </div>
+      <NavRow />
       <div className="px-page flex flex-col gap-6 pt-12 md:gap-8 md:pt-16">
         <p className="max-w-[60rem] text-balance text-[8.5vw] font-medium leading-[1.05] tracking-[-0.04em] md:text-[3.4vw]">
           Pequenas ferramentas e <span className="display-serif">brincadeiras</span> que eu faço por

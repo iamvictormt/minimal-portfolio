@@ -38,6 +38,17 @@
   --accent-foreground: #303030;
 }
 
+/* Height of the sticky nav bar, so anything that sticks below it can clear it. */
+:root {
+  --nav-h: 4.6rem;
+}
+
+@media (width >= 48rem) {
+  :root {
+    --nav-h: 5.9rem;
+  }
+}
+
 @layer base {
   * {
     border-color: var(--color-border);

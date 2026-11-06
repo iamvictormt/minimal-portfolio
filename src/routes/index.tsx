@@ -143,7 +143,7 @@ function FeaturedProjects() {
               <span className="block overflow-hidden border border-border bg-muted">
                 <img
                   src={p.image}
-                  alt={`Captura de tela do projeto ${p.name}`}
+                  alt={p.imageAlt ?? `Captura de tela do projeto ${p.name}`}
                   width={PROJECT_IMAGE_SIZE.width}
                   height={PROJECT_IMAGE_SIZE.height}
                   loading="lazy"
@@ -195,9 +195,7 @@ function Index() {
           <Reveal delay={1650}>{NAME_PARTS[1]}</Reveal>
         </span>
       </h1>
-      <div className="sticky top-0 z-40 mt-8 bg-ink">
-        <NavRow />
-      </div>
+      <NavRow />
       <HandsBanner
         src={hands}
         alt="Uma mão humana e uma mão de robô, feitas de pontos, se aproximando de uma janela chamada PROJECT.EXE"

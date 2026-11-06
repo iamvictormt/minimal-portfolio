@@ -57,11 +57,11 @@ export const TAGLINE = `Feito em ${SITE.city}, ${SITE.stateName}, linha por linh
 
 export function NavRow() {
   return (
-    // A black bar, edge to edge; the links sit on the page gutter. Hovering dims the others, and the
-    // current page keeps its underline.
+    // A black bar, edge to edge, that stays at the top of the screen on every page; the links sit on the
+    // page gutter. Hovering dims the others, and the current page keeps its underline.
     <nav
       aria-label="Principal"
-      className="px-page grid grid-cols-4 bg-ink text-ink-foreground [&:focus-within>a:not(:focus-within)]:opacity-40 [&:hover>a:not(:hover)]:opacity-40"
+      className="px-page sticky top-0 z-40 mt-8 grid grid-cols-4 bg-ink text-ink-foreground [&:focus-within>a:not(:focus-within)]:opacity-40 [&:hover>a:not(:hover)]:opacity-40"
     >
       {nav.map((i) => (
         <Link

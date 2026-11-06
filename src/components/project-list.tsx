@@ -89,7 +89,7 @@ export function ProjectList({ limit }: { limit?: number }) {
               <span className="col-span-full mt-2 flex flex-col gap-3 md:hidden">
                 <img
                   src={p.image}
-                  alt={`Captura de tela do projeto ${p.name}`}
+                  alt={p.imageAlt ?? `Captura de tela do projeto ${p.name}`}
                   width={PROJECT_IMAGE_SIZE.width}
                   height={PROJECT_IMAGE_SIZE.height}
                   loading="lazy"

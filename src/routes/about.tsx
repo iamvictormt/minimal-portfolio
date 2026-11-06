@@ -86,9 +86,7 @@ function About() {
       )}
       <TopBar />
       <PageTitle italic="Sobre">Mim</PageTitle>
-      <div className="mt-8">
-        <NavRow />
-      </div>
+      <NavRow />
 
       <div className="px-page flex flex-col gap-6 pt-12 md:gap-8 md:pt-16">
         <p className="max-w-[60rem] text-balance text-[8.5vw] font-medium leading-[1.05] tracking-[-0.04em] md:text-[3.4vw]">
@@ -105,8 +103,8 @@ function About() {
         <h2 id="how" className="micro mb-6 uppercase text-foreground/70 md:mb-10">
           Como eu trabalho
         </h2>
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-[5fr_7fr] md:gap-20">
-          <div className="sticky top-3 z-10 self-start bg-background pb-2 md:top-24 md:pb-0">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-[6fr_5fr] md:gap-16">
+          <div className="sticky top-[calc(var(--nav-h)+0.5rem)] z-10 self-start overflow-y-clip bg-background pb-2 md:top-[calc(var(--nav-h)+1.5rem)] md:overflow-visible md:pb-0">
             <StackObject stage={stage} />
           </div>
           <ol>

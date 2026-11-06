@@ -1,6 +1,7 @@
 import img_nacho_man from "@/assets/projects/nacho-man.jpg";
 import img_nacho_factory from "@/assets/projects/nacho-factory.jpg";
 import img_atelie_norte from "@/assets/projects/atelie-norte.jpg";
+import img_cafe_grao_da_brasa from "@/assets/projects/cafe-grao-da-brasa.png";
 import img_luna_shop from "@/assets/projects/luna-shop.jpg";
 import img_tennispool from "@/assets/projects/tennispool.jpg";
 import img_farejei from "@/assets/projects/farejei.jpg";
@@ -12,8 +13,9 @@ import img_up_connection from "@/assets/projects/up-connection.jpg";
 
 export type Project = {
   name: string;
-  /** Screenshot of the live system (1200×750). */
+  /** Preview image of the project (1200×750). */
   image: string;
+  imageAlt?: string;
   type: string;
   /** Shown as a large card on the home page. */
   featured?: boolean;
@@ -56,6 +58,16 @@ export const projects: Project[] = [
     role: "Direção visual e front-end",
     stack: ["Next.js", "Tailwind", "Framer Motion"],
     href: "https://atelie-norte-arquitetura.vercel.app/",
+  },
+  {
+    name: "Café Grão da Brasa",
+    image: img_cafe_grao_da_brasa,
+    imageAlt: "Captura de tela do site do Café Grão da Brasa.",
+    type: "Site institucional",
+    description:
+      "Site de cafeteria com cardápio, degustação interativa, agenda de eventos e informações para visita.",
+    stack: ["HTML", "CSS", "JavaScript"],
+    href: "https://cafe-grao-da-brasa.vercel.app/",
   },
   {
     name: "Luna Shop",

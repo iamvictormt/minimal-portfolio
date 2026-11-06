@@ -180,7 +180,7 @@ export function StackObject({ stage }: { stage: number }) {
   const current = LAYERS[active] ?? LAYERS[0];
 
   return (
-    <div className="mx-auto w-full max-w-sm md:max-w-none">
+    <div className="mx-auto w-full max-w-[15rem] md:max-w-none">
       <div
         role="img"
         aria-label={`Camadas de uma aplicação full stack: ${LAYERS.map((l) => l.label).join(", ")}`}
